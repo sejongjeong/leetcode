@@ -22,6 +22,7 @@ class Single:
                 pt.next = tmp
                 pt = pt.next
 
+
 # Test Solution
 # class Solution:
 #     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
@@ -51,7 +52,9 @@ class Single:
 
 
 class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoLists(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         if (not list1) or (list2 and list1.val > list2.val):
             list1, list2 = list2, list1
         if list1:
@@ -60,7 +63,7 @@ class Solution:
 
 
 test = Solution()
-t_ptr = test.mergeTwoLists(None, Single([1, 3, 4, 6, 11]).h)
+t_ptr = test.mergeTwoLists(Single([1, 2, 5, 6, 8, 9, 11]).h, Single([1, 3, 4, 6, 11]).h)
 while t_ptr:
     print(t_ptr.val)
     t_ptr = t_ptr.next
